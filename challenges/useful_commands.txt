@@ -7,3 +7,4 @@ export PATH=/tmp:$PATH
 ## weak sudo
 
 sudo -u <user> cat /challenge/<my_user>/<path_with_access>/../<other_path>/.passwd
+
